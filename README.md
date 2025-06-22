@@ -18,7 +18,7 @@
 int main() {
 	int a, b, s;
 
-	printf("1.2 \nEnter number 1: ");
+	printf("Enter number 1: ");
 	scanf("%d", &a);
 
 	while (getchar() != '\n');
@@ -31,5 +31,41 @@ int main() {
 	return 0;
 }
 ```
+### Результат выполненной работы  
+[![image.png](https://i.postimg.cc/d0n44MH9/image.png)](https://postimg.cc/LqYt8WMq)
+
+### 1.3  
+## Задача  
+Вычислить значение выражения
+### Математическая модель
+[![image.png](https://i.postimg.cc/w3KV79M9/image.png)](https://postimg.cc/Pv4Z7s17)
+
 ### Информация о студенте  
 Иванишин Даниил Евгеньевич, 1 курс, ИВТ-1.1  
+### Список идентификаторов  
+| Имя  | Тип | Смысл |
+| --- | --- | --- |
+| x  | double  |  Первое число |
+| y  | double  |  Второе число |
+| u  | double  |  Результат    |  
+  
+### Код программы
+```C
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+	double x, y, u;
+	printf("Enter x: ");
+	scanf("%lf", &x);
+	printf("Enter y: ");
+	scanf("%lf", &y);
+
+	u = (1 + pow(sin(x + y), 2)) / (2 + fabs(x - (2 * pow(x, 2)) / (1 + fabs(sin(x + y)))));
+
+	printf("u(%.2f, %.2f) = %.6f\n", x, y, u);
+	return 0;
+}
+```
+### Результат выполненной работы  
+[![image.png](https://i.postimg.cc/4NCqKgrK/image.png)](https://postimg.cc/RqRX8jC9)
