@@ -34,8 +34,8 @@ int main() {
 ### Результат выполненной работы  
 [![image.png](https://i.postimg.cc/d0n44MH9/image.png)](https://postimg.cc/LqYt8WMq)
 
-### 1.3  
-## Задача  
+## Задача 1.3  
+### Постановка задачи  
 Вычислить значение выражения
 ### Математическая модель
 [![image.png](https://i.postimg.cc/w3KV79M9/image.png)](https://postimg.cc/Pv4Z7s17)
@@ -69,3 +69,52 @@ int main() {
 ```
 ### Результат выполненной работы  
 [![image.png](https://i.postimg.cc/4NCqKgrK/image.png)](https://postimg.cc/RqRX8jC9)
+
+## 1.4  
+### Задача  
+Вычислить значение выражения и выполнить для следующих значений:  
+a = 0.12, b = 3.5, c = 2.4, x = 1.4 ;  
+a = 0.12, b = 3.5, c = 2.4, x = 1.6 ;  
+a = 0.27, b = 3.9, c = 2.8, x = 1.8 .  
+Значения параметров и аргументов можно вводить прямо в коде программы без ввода с клавиатуры.
+### Математическая модель  
+[![image.png](https://i.postimg.cc/xTSpfPzM/image.png)](https://postimg.cc/pyqJkzkL)
+### Список идентификаторов  
+| Имя  | Тип | Смысл |
+| --- | --- | --- |
+| a  | double  |  переменная для вычисления формулы |
+| b  | double  |  переменная для вычисления формулы |
+| c  | double  |  переменная для вычисления формулы |  
+| x  | double  |  переменная для вычисления формулы |  
+| term1  | double  |  первое слагаемое |  
+| numerator  | double  |  числитель второго слагаемого |  
+| denominator  | double  |  делитель второго слагаемого |  
+| term2  | double  |  второе слагаемое |  
+  
+### Код программы
+```C
+#include <stdio.h>
+#include <math.h>
+
+double calculate_h(double x, double a, double b, double c) {
+	double term1 = -(x - a) / cbrt(x * x + a * a);
+
+	double numerator = 4 * pow(pow(x * x + b * b, 3), 0.25);
+	double denominator = 2 + a + b + cbrt(pow(x - c, 2));
+	double term2 = numerator / denominator;
+
+	return term1 - term2;
+}
+
+int main() {
+	double a = 0.12, b = 3.5, c = 2.4, x = 1.4;
+	printf("1. %lf \n", calculate_h(x, a, b, c));
+	a = 0.12, b = 3.5, c = 2.4, x = 1.6;
+	printf("2. %lf \n", calculate_h(x, a, b, c));
+	a = 0.27, b = 3.9, c = 2.8, x = 1.8;
+	printf("3. %lf \n", calculate_h(x, a, b, c));
+	return 0;
+}
+```  
+### Результат выполненной работы  
+[![image.png](https://i.postimg.cc/SxxrR1N2/image.png)](https://postimg.cc/mtKM6w9B)
